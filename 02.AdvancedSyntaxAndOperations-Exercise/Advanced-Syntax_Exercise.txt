@@ -1,0 +1,210 @@
+
+Problem 1. Index of Letters
+Write a program that creates an array containing all letters from the alphabet (a-z). Read a lowercase word from the console and print the index of each of its letters from the letters array.
+Examples
+Input	Output
+abcz	a -> 0  
+b -> 1
+c -> 2
+z -> 25
+softuni	s -> 18
+o -> 14
+f -> 5
+t -> 19
+u -> 20
+n -> 13
+i -> 8
+
+Problem 2. Reverse an Array of Strings
+Write a program to read an array of strings, reverse it and print its elements. The input consists of a sequence of space separated strings. Print the output on a single line (space separated).
+Examples
+Input	Output
+a b c d e	e d c b a
+-1 hi ho w	w ho hi -1
+Hints
+•	Read the array of strings.
+•	Exchange the first element (at index 0) with the last element (at index n-1).
+•	Exchange the second element (at index 1) with the element before the last (at index n-2).
+•	Continue the same way until the middle of the array is reached.
+ 
+•	Another, shorter approach, is to use the array_reverse() extension method from PHP Build-in methods.
+
+
+Problem 3. Sum Reversed Numbers 
+To “rotate an array on the right” means to move its last element first: {1, 2, 3}  {3, 1, 2}.
+Write a program to read an array of n integers (space separated on a single line) and sum the obtained arrays after each rotation as shown below.
+Examples
+Input	Output	Comments
+123 234 12	774	321 + 432 + 21 = 774
+12 12 34 84 66 12	220	21 + 21 + 43+ 48 + 66 + 21 = 220
+12 12 12	63	21 + 21 + 21 = 63
+
+Problem 4. Most Frequent Number
+Write a program that finds the most frequent number in a given sequence of numbers. 
+•	Numbers will be in the range [0…65535].
+•	In case of multiple numbers with the same maximal frequency, print the leftmost of them.
+Examples
+Input	Output	Output
+4 1 1 4 2 3 4 4 1 2 4 9 3	4	The number 4 is the most frequent (occurs 5 times)
+2 2 2 2 1 2 2 2	2	The number 2 is the most frequent (occurs 7 times)
+7 7 7 0 2 2 2 0 10 10 10	7	The numbers 2, 7 and 10 have the same maximal frequence (each occurs 3 times). The leftmost of them is 7.
+
+
+Problem 5. Max Sequence of Equal Elements
+Write a program that finds the longest sequence of equal elements in an array of integers. If several longest sequences exist, print the leftmost one.
+Examples
+Input	Output
+2 1 1 2 3 3 2 2 2 1	2 2 2
+1 1 1 2 3 1 3 3	1 1 1
+4 4 4 4	4 4 4 4
+0 1 1 5 2 2 6 3 3	1 1
+Hints
+•	Start with the sequence that consists of the first element: start=0, len=1.
+•	Scan the elements from left to right, starting at the second element: pos=1…n-1.
+o	At each step compare the current element with the element on the left.
+	Same value  you have found a sequence longer by one  len++.
+	Different value  start a new sequence from the current element: start=pos, len=1.
+o	After each step remember the sequence it is found to be longest at the moment: bestStart=start, bestLen=len.
+•	Finally, print the longest sequence by using bestStart and bestLen.
+
+
+
+Problem 6. Max Sequence of Increasing Elements
+Write a program that finds the longest increasing subsequence in an array of integers. The longest increasing subsequence is a portion of the array (subsequence) that is strongly increasing and has the longest possible length. If several such subsequences exist, find the left most of them.
+Examples
+Input	Output
+3 2 3 4 2 2 4	2 3 4
+4 5 1 2 3 4 5	1 2 3 4 5
+3 4 5 6	3 4 5 6
+0 1 1 2 2 3 3	0 1
+Hints
+•	Use the same algorithm like in the previous problem (Max Sequence of Equal Elements).
+
+
+
+Problem 7. Last K Numbers Sums Sequence
+Enter two integers n and k. Generate and print the following sequence of n elements:
+•	The first element is: 1
+•	All other elements = sum of the previous k elements (if less than k are available, sum all of them)
+•	Example: n = 9, k = 5  120 = 4 + 8 + 16 + 31 + 61
+Examples
+Input	Output
+6
+3	1 1 2 4 7 13
+
+8
+2	1 1 2 3 5 8 13 21
+
+9
+5	1 1 2 4 8 16 31 61 120
+Hints
+•	Use an array of integers to hold the sequence.
+•	Initially seq[0] = 1
+•	Use two nested loops:
+o	Loop through all elements i = 1 … n 
+o	Sum the elements i-k … i-1: seq[i] = sum(seq[i-k … i-1])
+
+
+
+
+Problem 8. Condense Array to Number
+Write a program to read an array of integers and condense them by summing adjacent couples of elements until a single integer is obtained. For example, if we have 3 elements {2, 10, 3}, we sum the first two and the second two elements and obtain {2+10, 10+3} = {12, 13}, then we sum again all adjacent elements and obtain {12+13} = {25}.
+Examples
+Input	Output	Comments
+2 10 3	25	2 10 3  2+10 10+3  12 13  12 + 13  25
+5 0 4 1 2	35	5 0 4 1 2  5+0 0+4 4+1 1+2  5 4 5 3  5+4 4+5 5+3  9 9 8  9+9 9+8  18 17  18+17  35
+1	1	1 is already condensed to number
+Hints
+While we have more than one element in the array nums[], repeat the following:
+•	Allocate a new array condensed[] of size nums.Length-1.
+•	Sum the numbers from nums[] to condensed[]:
+o	condensed[i] = nums[i] + nums[i+1]
+•	nums[] = condensed[]
+The process is illustrated below:
+ 	
+ 
+
+
+Problem 9. Sum Matrix Elements
+Write program that read a matrix from console and print:
+•	Count of rows
+•	Count of columns
+•	Sum of all matrix’s elements
+On first line you will get matrix sizes in format [rows, columns]
+Examples
+Input	Output
+3, 6
+7, 1, 3, 3, 2, 1
+1, 3, 9, 8, 5, 6
+4, 6, 7, 9, 1, 0
+	3
+6
+76
+Hints
+•	On next [rows] lines you will get elements for each column separated with coma and whitespace
+•	Try to use only foreach for printing
+
+
+Problem 10. Maximum sum of 2x2 submatrix
+Write a program that read a matrix from console. Then find biggest sum of 2x2 submatrix and print it to console.
+On first line you will get matrix sizes in format rows, columns.
+One next rows lines you will get elements for each column separated with coma. 
+Print biggest top-left square, which you find and sum of it's elements.
+
+
+
+Examples
+Input	Output
+3, 6
+7, 1, 3, 3, 2, 1
+1, 3, 9, 8, 5, 6
+4, 6, 7, 9, 1, 0	9 8
+7 9
+33
+2, 4
+10, 11, 12, 13
+14, 15, 16, 17	12 13 
+16 17 
+58
+Hints
+•	If you find some max squares, print top-left one
+
+
+Problem 11. Maximal Sum
+Write a program, which reads a rectangular matrix of integers of size of r rows by c columns. Find in the matrix a platform of size 3 x 3 with a maximal sum.
+Input
+•	The first line holds the number of rows r and the number of columns c.
+•	The next r lines hold the elements of the matrix.
+•	Constraints: 3 ≤ r, c ≤ 1000.
+
+Output
+•	At the first line of the output print the sum.
+•	At the next line print the platform itself.
+•	If several platforms of equal sum exist, print the one that is located in the most upper-left position.
+
+Examples
+Input	Output		Input	Output		Input	Output
+4 4
+5 6 2 8 
+3 1 9 5
+8 1 6 9
+1 5 3 4	Sum = 47
+6 2 8
+1 9 5
+1 6 9		5 6
+1 2 4 8 9 6
+2 4 1 3 4 2
+2 7 9 9 9 7
+8 6 9 9 9 6
+9 5 9 9 9 9	Sum = 81
+9 9 9
+9 9 9
+9 9 9		4 6
+1 1 1 1 1 1
+1 1 1 1 1 1
+1 1 2 1 1 1
+1 1 1 1 1 1	Sum = 10
+1 1 1
+1 1 1
+1 1 2
+
