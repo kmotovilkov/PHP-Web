@@ -1,0 +1,21 @@
+Products & Category
+
+Database table structure
+	- database
+	- products table
+	- sample data
+	- categories table
+	- categories sample data
+
+4. Index page
+	- List
+
+5. View page	
+6. Create page
+7. Update page
+8. Delete	
+9. Layout
+10. Pagging
+11. Sorting
+12. Multi delete
+	
