@@ -1,0 +1,212 @@
+Exercises: Functions, Objects and Classes
+
+
+Problem 1.	Cooking by Numbers
+Write a program that receives a number and a list of five operations. Perform the operations in sequence by starting with the input number and using the result of every operation as starting point for the next. Print the result of every operation in order. The operations can be one of the following:
+•	chop – divide the number by two
+•	dice – square root of number
+•	spice – add 1 to number
+•	bake – multiply number by 3
+•	fillet – subtract 20% from number
+The input comes in 2 lines. On the first line you will receive your starting point and must be parsed to a number. On the second line you will receive 5 commands separated by “, “ each one will be the name of the operation to be performed.
+The output should be printed on the console.
+Examples
+Input	Output
+32
+chop, chop, chop, chop, chop	16
+8
+4
+2
+1
+
+Input	Output
+9
+dice, spice, chop, bake, fillet	3
+4
+2
+6
+4.8
+
+
+Problem 2.	Modify Average
+Write a program that modifies a number until the average value of all of its digits is higher than 5. In order to modify the number, your program should append a 9 to the end of the number, when the average value of all of its digits is higher than 5 the program should stop appending. If the number’s average value of all of its digits is already higher than 5, no appending should be done.
+The input is a single number received as a string.
+The output should consist of a single number - the final modified number which has an average value of all of its digits higher than 5. The output should be printed on the console.
+Constraints
+•	The input number will consist of no more than 6 digits.
+•	The input will be a valid number (there will be no leading zeroes).
+Examples
+Input	Output
+101	1019999
+5835	5835
+
+Problem 3.	Validity Checker
+Write a program that receives two points in the format x1, y1, x2, y2 and checks if the distances between each point and the start of the cartesian coordinate system (0, 0) and between the points themselves is valid. A distance between two points is considered valid, if it is an integer value. In case a distance is valid write "{x1, y1} to {x2, y2} is valid", in case the distance is invalid write "{x1, y1} to {x2, y2} is invalid". 
+The order of comparisons should always be first {x1, y1} to {0, 0}, then {x2, y2} to {0, 0} and finally {x1, y1} to {x2, y2}. 
+The input consists of one string in which the coordinates are separated by “, “(look at the examples).
+For each comparison print on the output either "{x1, y1} to {x2, y2} is valid" if the distance between them is valid, or "{x1, y1} to {x2, y2} is invalid"- if it’s invalid.
+Examples
+Input	Output
+3, 0, 0, 4	{3, 0} to {0, 0} is valid
+{0, 4} to {0, 0} is valid
+{3, 0} to {0, 4} is valid
+2, 1, 1, 1	{2, 1} to {0, 0} is invalid
+{1, 1} to {0, 0} is invalid
+{2, 1} to {1, 1} is valid
+
+
+Problem 4.	Treasure Locator
+You will be given a series of coordinates, leading to a buried treasure. Use the map to the right to write a program that locates on which island it is. After you find where all the treasure chests are, compose a list and print it on the console. If a chest is not on any of the islands, print “On the bottom of the ocean” to inform your treasure-hunting team to bring diving gear. If the location is on the shore (border) of the island, it’s still considered to lie inside.
+The input comes as a string of variable number of elements separated by “, “ that must be parsed to numbers. Each pair is the coordinates to a buried treasure chest.
+The output is a list of the locations of every treasure chest, either the name of an island or “On the bottom of the ocean”, printed on the console.
+
+Examples
+Input	Output
+4, 2, 1.5, 6.5, 1, 3	On the bottom of the ocean
+Tonga
+Tuvalu
+6, 4	Samoa
+
+ 
+Problem 5.	Last Digit Name
+Write a class Number that will hold an integer number. Write a method in the class that returns the English name of the last digit of the given number. Write a program that reads an integer and prints the returned value from this method.
+Examples
+Input	Output		Input	Output
+1024	four		512	two
+
+Problem 06.	Number in Reversed Order
+Write a class DecimalNumber that has a method that prints all its digits in reversed order.
+Examples
+Input	Output		Input	Output
+256	652		1.12	21.1
+
+Problem 07.	Opinion Poll
+Using the Person class, write a program that reads from the console N lines of personal information and then prints all people whose age is more than 30 years, sorted in alphabetical order.
+Examples
+Input	Output
+3
+Pesho 12
+Stamat 31
+Ivan 48	Ivan - 48
+Stamat - 31
+5
+Nikolai 33
+Yordan 88
+Tosho 22
+Lyubo 44
+Stanislav 11	Lyubo - 44
+Nikolai - 33
+Yordan - 88
+
+Problem 08.	Company Roster
+Define a class Employee that holds the following information: name, salary, position, department, email and age. The name, salary, position and department are mandatory while the rest are optional. 
+Your task is to write a program which takes N lines of employees from the console and calculates the department with the highest average salary and prints for each employee in that department his name, salary, email and age – sorted by salary in descending order. If an employee doesn’t have an email – in place of that field you should print “n/a” instead, if he doesn’t have an age – print “-1” instead. The salary should be printed to two decimal places after the seperator.
+Examples
+Input	Output
+4
+Pesho 120.00 Dev Development pesho@abv.bg 28
+Toncho 333.33 Manager Marketing 33
+Ivan 840.20 ProjectLeader Development ivan@ivan.com
+Gosho 0.20 Freeloader Nowhere 18	Highest Average Salary: Development
+Ivan 840.20 ivan@ivan.com -1
+Pesho 120.00 pesho@abv.bg 28
+
+6
+Stanimir 496.37 Temp Coding stancho@yahoo.com
+Yovcho 610.13 Manager Sales
+Toshko 609.99 Manager Sales toshko@abv.bg 44
+Venci 0.02 Director BeerDrinking beer@beer.br 23
+Andrei 700.00 Director Coding
+Popeye 13.3333 Sailor SpinachGroup popeye@pop.ey
+Highest Average Salary: Sales
+Yovcho 610.13 n/a -1
+Toshko 609.99 toshko@abv.bg 44
+
+
+Problem 09.	*Speed Racing
+Your task is to implement a program that keeps track of cars and their fuel and supports methods for moving the cars. Define a class Car that keeps track of a car’s Model, fuel amount, fuel cost for 1 kilometer and distance traveled. A Car’s Model is unique - there will never be 2 cars with the same model.
+ On the first line of the input you will receive a number N – the number of cars you need to track, on each of the next N lines you will receive information for a car in the following format “<Model> <FuelAmount> <FuelCostFor1km>”, all cars start at 0 kilometers traveled.
+
+After the N lines until the command “End” is received, you will receive a commands in the following format “Drive <CarModel>  <amountOfKm>”, implement a method in the Car class to calculate whether or not a car can move that distance, if it can the car’s fuel amount should be reduced by the amount of used fuel and its distance traveled should be increased by the amount of kilometers traveled, otherwise the car should not move (Its fuel amount and distance traveled should stay the same) and you should print on the console “Insufficient fuel for the drive”. After the “End” command is received, print each car and its current fuel amount and distance traveled in the format “<Model> <fuelAmount>  <distanceTraveled>”, where the fuel amount should be printed to two decimal places after the separator.
+Note
+Use double precision of two decimal digits after the floating point for calculations. Output two decimal digits after the floating point. Round up for this task.
+Examples
+Input	Output
+2
+AudiA4 23 0.3
+BMW-M2 45 0.42
+Drive BMW-M2 56
+Drive AudiA4 5
+Drive AudiA4 13
+End	AudiA4 17.60 18
+BMW-M2 21.48 56
+3
+AudiA4 18 0.34
+BMW-M2 33 0.41
+Ferrari-488Spider 50 0.47
+Drive Ferrari-488Spider 97
+Drive Ferrari-488Spider 35
+Drive AudiA4 85
+Drive AudiA4 50
+End	Insufficient fuel for the drive
+Insufficient fuel for the drive
+AudiA4 1.00 50
+BMW-M2 33.00 0
+Ferrari-488Spider 4.41 97
+
+
+
+Problem 10.	Pokemon Trainer
+You wanna be the very best pokemon trainer, like no one ever was, so you set out to catch pokemon. Define a class Trainer and a class Pokemon. Trainers have a name, number of badges and a collection of pokemon, Pokemon have a name, an element and health, all values are mandatory. Every Trainer starts with 0 badges.
+From the console you will receive an unknown number of lines until you receive the command “Tournament”, each line will carry information about a pokemon and the trainer who caught it in the format “<TrainerName> <PokemonName> <PokemonElement> <PokemonHealth>” where TrainerName is the name of the Trainer who caught the pokemon, names are unique there cannot be 2 trainers with the same name. After receiving the command “Tournament” an unknown number of lines containing one of three elements “Fire”, “Water”, “Electricity” will follow until the command “End” is received. For every command you must check if a trainer has atleast 1 pokemon with the given element, if he does he receives 1 badge, otherwise all his pokemon lose 10 health, if a pokemon falls to 0 or less health he dies and must be deleted from the trainer’s collection. After the command “End” is received you should print all trainers sorted by the amount of badges they have in descending order (if two trainers have the same amount of badges they should be sorted by order of appearance in the input) in the format “<TrainerName> <Badges> <NumberOfPokemon>”.
+Examples
+Input	Output
+Pesho Charizard Fire 100
+Gosho Squirtle Water 38
+Pesho Pikachu Electricity 10
+Tournament
+Fire
+Electricity
+End	Pesho 2 2
+Gosho 0 1
+Stamat Blastoise Water 18
+Nasko Pikachu Electricity 22
+Jicata Kadabra Psychic 90
+Tournament
+Fire
+Electricity
+Fire
+End	Nasko 1 1
+Stamat 0 0
+Jicata 0 1
+
+
+Problem 11.	Oldest Family Member
+Create class Person with fields name and age. Create a class Family. The class should have list of people, method for adding members (void addMember(Person member)) and a method returning the oldest family member (Person getOldestMember()). Write a program that reads name and age for N people and adds them to the family. Then print the name and age of the oldest member.
+If you’ve defined the class correctly, the test should pass. 
+Examples
+Input	Output		Input	Output
+3
+Pesho 3
+Gosho 4
+Annie 5	Annie 5		5
+Steve 10
+Christopher 15
+Annie 4
+Ivan 35
+Maria 34	Ivan 35
+
+
+
+
+Problem 12.	Date Modifier
+Create a class DateModifier which stores the difference of the days between two Dates. It should have a method which takes two String parameters representing a date as Strings and calculates the difference in the days between them.
+Examples
+Input	Output
+1992 05 31
+2016 06 17	8783
+2016 05 31
+2016 04 19	42
+Hint
+Use the DateTime class.
+
