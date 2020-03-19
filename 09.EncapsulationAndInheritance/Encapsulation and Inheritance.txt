@@ -1,0 +1,208 @@
+Defining Classes
+Encapsulation and Inheritance
+
+
+Problem 1.	Class Box
+You are given a geometric figure box with parameters length, width and height. Model a class Box that that can be instantiated by the same three parameters. Expose to the outside world only methods for its surface area, lateral surface area and its volume (formulas: http://www.mathwords.com/r/rectangular_parallelepiped.htm).
+The lateral surface area of a three-dimensional object is the surface area of the object minus the area of its bases.
+On the first three lines you will get the length, width and height. Print three lines with the surface area, lateral surface area and the volume of the box:
+Note
+Print exactly two digits after every double value's decimal separator (e.g. 10.00). See the built-in PHP function round() (http://php.net/manual/en/function.round.php). 
+Examples
+Input	Output
+2
+3
+4	Surface Area – 52.00
+Lateral Surface Area – 40.00
+Volume – 24.00
+1.3
+1
+6	Surface Area - 30.20
+Lateral Surface Area - 27.60
+Volume - 7.80
+15
+23
+8	Surface Area - 1298.00
+Lateral Surface Area - 608.00
+Volume - 2760.00
+
+
+Problem 2.	Class Box Data Validation
+A box’s side should not be zero or a negative number. Expand your class from the previous problem by adding data validation by using setters for each parameter given to the constructor (this makes 3 setters). Make a private setter that performs data validation internally. 
+Examples
+Input	Output
+2
+-3
+4	Width cannot be zero or negative. 
+
+
+Problem 3.	Shopping Spree
+Create two classes: class Person and class Product. Each person should have a name, money and a bag of products. Each product should have name and cost. Name cannot be an empty string. Money cannot be a negative number. 
+Create a program in which each command corresponds to a person buying a product:
+•	If the person can afford a product add it to his bag. 
+•	If a person doesn’t have enough money, print an appropriate message ("[Person name] can't afford [Product name]").
+On the first two lines you are given all people and all products. Next you will be given all purchases people made until END is reached. Print a message when someone makes a purchase. After all purchases print every person in the order of appearance and all products that he has bought also in order of appearance. If nothing is bought, print the name of the person followed by "Nothing bought". 
+In case of invalid input (negative money exception message: "Money cannot be negative") or empty name: (empty name exception message "Name cannot be empty") break the program with an appropriate message. See the examples below:
+Examples
+Input	Output
+Pesho=11;Gosho=4;
+Bread=10;Milk=2;
+Pesho Bread
+Gosho Milk
+Gosho Milk
+Pesho Milk
+END	Pesho bought Bread
+Gosho bought Milk
+Gosho bought Milk
+Pesho can't afford Milk
+Pesho - Bread
+Gosho - Milk,Milk
+Mimi=0;
+Kafence=2;
+Mimi Kafence
+END	Mimi can't afford Kafence
+Mimi – Nothing bought
+Jeko=-3;
+Chushki=1;
+Jeko Chushki
+END	Money cannot be negative
+
+to create a Topping class. It can be of four different types – meat, veggies, cheese or a sauce. A topping has a weight in grams. The calories per gram of a topping are calculated depending on its type. The base calories per gram are 2. Every different type of topping has a modifier. For example, meat has a modifier of 1.5, so a meat topping will have 3 calories per gram (2 * 1.5). Everything that the class should expose is a getter for calories per gram. You are given the modifiers below:
+Modifiers:
+•	Meat – 1.2;
+•	Veggies – 0.8;
+•	Cheese – 1.1;
+•	Sauce – 0.9; 
+Your task is to create the class with a proper constructor, properties, getters and setters. Make sure you use the proper access modifiers. 
+Step 4. Validate Data for the Topping Class
+Change the internal logic of the Topping class by adding a data validation in the setter. 
+Make sure the topping is one of the provided types, otherwise throw a proper exception with the message "Cannot place [name of invalid argument] on top of your pizza." 
+The allowed weight of a topping is in the range [1..50] grams. If it is outside of this range throw an exception with the message "[Topping type name] weight should be in the range [1..50].".
+Exception Messages
+•	"Cannot place [name of invalid argument] on top of your pizza."
+•	"[Topping type name] weight should be in the range [1..50]." 
+Examples
+Input	Output
+Dough White Chewy 100
+Topping meat 30
+END	330.00
+72.00
+Dough White chewy 100
+Topping Krenvirshi 500
+END	330.00
+Cannot place Krenvirshi on top of your pizza.
+Dough White Chewy 100
+Topping Meat 500
+END	330.00
+Meat weight should be in the range [1..50].
+
+
+
+
+Problem 4.	Book Shop
+You are working in a library. And you are pissed off by writing descriptions for books by hand, so you wanted to use the computer to make them faster. So the task is simple. Your program should have two classes – one for the ordinary books – Book, and another for the special ones – GoldenEditionBook. So let’s get started! We need two classes:
+•	Book - represents a book that holds title, author and price. A book should offer information about itself in the format shown in the output below.
+•	GoldenEditionBook - represents a special book holds the same properties as any Book, but its price is always 30% higher.
+Input
+The input comes from the console. It will hold four lines. On the first you will be given the name, on the second the title and third will be the standard price. Fourth line will hold the type of book - GOLD or STANDARD
+Output
+On the first line print OK, if all inputs are in the correct format. If not print every error message on a single line.
+If input is valid print a second line with the price of the book.
+Constraints
+•	If the author’s second name is starting with a digit– exception’s message is: "Author not valid!"
+•	If the title’s length is less than 3 symbols – exception’s message is: "Title not valid!"
+•	If the price is zero or it is negative – exception’s message is: "Price not valid!"
+•	If book type is invalid – exception’s message is: "Type is not valid!"	
+Example
+Input	Output
+Ivo 4ndonov
+Under Cover
+9999999999999999999
+STANDARD	Author not valid!
+Georgi Petrov
+Summer Moon
+22
+STANDARD	OK
+22
+Vasil Ivanov
+UML Basics
+10
+GOLD	OK
+13
+
+Step 1. Create a Book Class
+Create a new class and name it Book. 
+
+Sample Code
+public class Book {
+
+    // 1. Add the Properties
+    // 2. Add the Constructor
+    // 3. Add the Methods
+}
+Step 2. Define the Properties of a Book
+Define the title, author and price properties of a Book. Ensure that they can only be changed by the class itself or its descendants (pick the most appropriate access modifier). 
+Step 3. Define a Constructor
+Define a constructor that accepts author, title and price arguments.
+Step 4. Perform Validations
+Create the properties (price, title and author) and perform validations for each one. The getter should return the corresponding property and the setter should validate the input data before setting it. Do this for every property.
+Step 5. Define magic method __toString
+The __toString() method allows a class to decide how it will react when it is treated like a string. For example, what echo $obj; will print.
+And voila! If everything is correct, we can now create Book objects and display information about them.
+Step 6. Create a GoldenEditionBook
+Create a GoldenEditionBook class that inherits Book and has the same constructor definition. However, do not copy the code from the Book class - reuse the Book class constructor.
+There is no need to rewrite the price, title and author properties since GoldenEditionBook inherits Book and by default has them.
+Step 7. Override the Price Method
+Golden edition books should return a 30% higher price than the original price. In order for the getter to return a different value, we need to override the method. 
+Back to the GoldenEditionBook class, let's override the getter method.
+Sample Code
+
+public function getPrice() {
+    return parent::getPrice() * 1.3;
+}
+
+Problem 5.	Mankind
+Your task is to model an application. It is very simple. The mandatory models of our application are 3:  Human, Worker and Student.
+The parent class – Human should have first name and last name. Every student has a faculty number. Every worker has a week salary and work hours per day. It should be able to calculate the money he earns by hour. You can see the constraints below.
+Input
+On the first input line you will be given info about a single student - first name, last name and faculty number. 
+On the second input line you will be given info about a single worker - first name, last name, salary and working hours. 
+Output
+You should first print the info about the student following a single blank line and the info about the worker in the given formats:
+•	Print the student info in the following format: 
+	First Name: {student's first name}
+	Last Name: {student's last name}
+	Faculty number: {student's faculty number}
+
+•	Print the worker info in the following format:
+	First Name: {worker's first name}
+Last Name: {worker's second name}
+Week Salary: {worker's salary}
+Hours per day: {worker's working hours}
+Salary per hour: {worker's salary per hour}
+Print exactly two digits after every double value's decimal separator (e.g. 10.00)
+Constraints
+Parameter	Constraint	Exception Message
+Human first name	Should start with a capital letter	"Expected upper case letter!Argument: firstName"
+Human first name	Should be at least 4 symbols	"Expected length at least 4 symbols!Argument: firstName"
+Human last name	Should start with a capital letter	"Expected upper case letter!Argument: lastName"
+Human last name	Should be at least 3 symbols	"Expected length at least 3 symbols!Argument: lastName "
+Faculty number	Length should be in range [5..10] digits	"Invalid faculty number!"
+Worker last name	Should be more than 3 symbols	"Expected length more than 3 symbols!Argument: lastName"
+Week salary	Should be more than 10	"Expected value mismatch!Argument: weekSalary"
+Working hours	Should be in the range [1..12]	"Expected value mismatch!Argument: workHoursPerDay"
+Example
+Input	Output
+Ivan Ivanov 08
+Pesho Kirov 1590 10	Invalid faculty number!
+Stefo Mk321 0812111
+Ivcho Ivancov 1590 10	First Name: Stefo
+Last Name: Mk321
+Faculty number: 0812111
+
+First Name: Ivcho
+Last Name: Ivancov
+Week Salary: 1590.00
+Hours per day: 10.00
+Salary per hour: 22.71
+
