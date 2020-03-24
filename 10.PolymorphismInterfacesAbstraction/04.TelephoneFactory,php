@@ -1,0 +1,53 @@
+<?php
+
+interface ICalL
+{
+    public function call(string $number): string;
+}
+
+interface IBrows
+{
+    public function brows(string $site): string;
+}
+
+class SmartPhone implements ICalL, IBrows
+{
+
+
+    public function call(string $number): string
+    {
+        if (preg_match_all("/[^0-9]+/",$number)) {
+            throw new Exception("Invalid number!");
+        }
+        return "Calling... $number" . PHP_EOL;
+    }
+
+    public function brows(string $site): string
+    {
+        if (preg_match_all("/[0-9]+/", $site)) {
+            throw new Exception("Invalid URL!");
+        }
+        return "Browsing: $site!" . PHP_EOL;
+    }
+}
+
+$numbers = explode(" ", readline());
+$sites = explode(" ", readline());
+$phones = new SmartPhone();
+foreach ($numbers as $number) {
+    try {
+
+      echo  $phones->call($number);
+    } catch (Exception $e) {
+        echo $e->getMessage().PHP_EOL;
+    }
+}
+
+foreach ($sites as $site) {
+    try {
+
+        echo $phones->brows($site);
+    } catch (Exception $e) {
+        echo $e->getMessage().PHP_EOL;
+    }
+}
