@@ -13,6 +13,7 @@ if (isset($_POST['username'], $_POST['password'])) {
     if ($userId != -1) {
         $authString = issueAuthenticatinoString($db, $userId);
         header("Location: categories.php?authId=$authString");
+        exit;
     }
 }
 require_once 'templates/login_form.php';
