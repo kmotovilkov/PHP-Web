@@ -58,9 +58,19 @@ input {
 .inputs {
     position: static;
     height: 100px;
-    margin-top: 15px; /*color: #656464;*/
+    margin-top: 2px;
     font-size: 18px;
     font-weight: 300;
     letter-spacing: 1px;
     margin-bottom: 7px;
+}
+
+.go {
+    text-decoration: none;
+    margin-bottom: -32rem;
+    color: #6a6a6a;
+}
+
+.go:hover {
+    color: black;
 }
