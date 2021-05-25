@@ -11,7 +11,7 @@ function getUserByAuthId(PDO $db, string $authId): int
     return -1;
 }
 
-function issueAuthenticatinoString(PDO $db, int $userId): string
+function issueAuthenticationString(PDO $db, int $userId): string
 {
     $query = "SELECT auth_string FROM authentications WHERE user_id=?";
     $stmt = $db->prepare($query);
@@ -26,7 +26,6 @@ function issueAuthenticatinoString(PDO $db, int $userId): string
     $stmt->execute([$authString, $userId]);
     return $authString;
 }
-
 function verifyCredentials(PDO $db, string $username, string $password): int
 {
     $query = "SELECT id, password FROM users WHERE username = ?";
@@ -42,7 +41,6 @@ function verifyCredentials(PDO $db, string $username, string $password): int
     }
     return -1;
 }
-
 function register(PDO $db, string $username, string $password): bool
 {
     $query = "INSERT INTO users(username, password ) VALUES (?, ?)";
