@@ -1,4 +1,3 @@
-<?php
 require_once 'db/db_connection.php';
 require_once 'db/user_queries.php';
 
@@ -12,4 +11,12 @@ $userId = getUserByAuthId($db, $authId);
 if ($userId == -1) {
     header("Location: login.php");
     exit;
+}
+
+function url(string $url)
+{
+    if (strstr($url, "?")) {
+        return $url . '&authId=' . $_GET['authId'];
+    }
+    return $url . '?authId=' . $_GET['authId'];
 }
