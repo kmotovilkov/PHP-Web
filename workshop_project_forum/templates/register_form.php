@@ -8,11 +8,12 @@
 </head>
 <body>
 <div class="container">
-<!--    <h1>Register form</h1>-->
+    <a class="go" href="././login.php">go to login form</a>
     <form method="post">
         <div class="inputs">
-        Username <input type="text" value="<?= $username; ?>" name="username"/><br/>
-        Password <input type="<?= !empty($password) ? 'text' : 'password';?>" value="<?=$password;?>" name="password"/><br/>
+            Username <input type="text" value="<?= $username; ?>" name="username"/><br/>
+            Password <input type="<?= !empty($password) ? 'text' : 'password'; ?>" value="<?= $password; ?>"
+                            name="password"/><br/>
         </div>
         <input id="submit" type="submit" value="Register"/>
     </form>
