@@ -1,4 +1,16 @@
 <?php
+function getUserByAuthId(PDO $db, string $authId): int
+{
+    $query = "SELECT user_id FROM authentications WHERE auth_string=?";
+    $stmt = $db->prepare($query);
+    $stmt->execute([$authId]);
+    $data = $stmt->fetch(PDO::FETCH_ASSOC);
+    if ($data && $data['user_id']) {
+        return (int)$data['user_id'];
+    }
+    return -1;
+}
+
 function issueAuthenticatinoString(PDO $db, int $userId): string
 {
     $query = "SELECT auth_string FROM authentications WHERE user_id=?";
