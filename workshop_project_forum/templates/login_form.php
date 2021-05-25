@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="container">
-<!--<h1>Login form</h1>-->
+    <a class="go" href="././register.php">go to regster form</a>
 <form method="post">
     <div class="inputs">
     Username <input type="text" value="<?= $username; ?>" name="username"/><br/>
