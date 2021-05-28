@@ -1,14 +1,10 @@
 <?php
-$input = readline();
-
-function isPalindrome(string $input)
+function isPalindrom(string $input): string
 {
-    $length = strlen($input);
-    for ($i = 0; $i < $length; $i++) {
-        if ($input[$i] != $input[$length - 1 - $i]) {
-            return "false";
-        }
-        return "true";
+    if ($input != strrev($input)) {
+        return "false";
     }
+    return "true";
 }
-echo isPalindrome($input);
+$input = readline();
+echo isPalindrom($input);
