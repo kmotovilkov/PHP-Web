@@ -1,47 +1,42 @@
 <?php
-
 class Number
 {
-    private $number;
-
-    public function __construct(  $number)
+    private $value;
+    public function __construct(int $name)
     {
-        $this->number = $number;
+        $this->value = $name;
     }
-
-    public function  lastD():string
+    /**
+     * @return string
+     */
+    public function getLastDigit(): string
     {
-        $lastDigit = 0;
-$number=$this->number;
-        $length = strlen($number);
-        for ($i = 0; $i < $length-1; $i++) {
-            $lastDigit = intval($number[$length-1]);
-        }
-        switch ($lastDigit){
-            case 0:
-                return "zero";
-            case 1:
-                return "one";
-            case 2:
-                return "two";
-            case 3:
-                return "three";
-            case 4:
-                return "four";
-            case 5:
-                return "five";
-            case 6:
-                return "six";
-            case 7:
-                return "seven";
-            case 8:
-                return "eight";
-            default:
-                return "nine";
+        $lastDigit = $this->value % 10;
+        if ($lastDigit == 0) {
+            return "zero";
+        } else if ($lastDigit == 1) {
+            return "one";
+        } else if ($lastDigit == 2) {
+            return "two";
+        } else if ($lastDigit == 3) {
+            return "three";
+        } else if ($lastDigit == 4) {
+            return "four";
+        } else if ($lastDigit == 5) {
+            return "five";
+        } else if ($lastDigit == 6) {
+            return "six";
+        } else if ($lastDigit == 7) {
+            return "seven";
+        } else if ($lastDigit == 8) {
+            return "eight";
+        } else if ($lastDigit == 9) {
+            return "nine";
         }
     }
 }
-$input = readline();
-$num = new Number($input);
+$input=readline();
+$number = new Number($input);
+echo $number->getLastDigit();
 
-echo $num->lastD();
+
