@@ -2,9 +2,9 @@
 class Number
 {
     private $value;
-    public function __construct(int $name)
+    public function __construct(int $value)
     {
-        $this->value = $name;
+        $this->value = $value;
     }
     /**
      * @return string
